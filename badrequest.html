@@ -1,0 +1,12 @@
+{% extends "master-user.html" %}
+{% block maintitle %}
+400 - Bad Request
+{% endblock %}
+{% block main %}
+  {% if message: %}
+    <p>{{ message }}</p>
+  {% else %}
+    <p>Your client made a request that could not be understood.</p>
+    <p>Sorry!</p>
+  {% endif %}
+{% endblock %}

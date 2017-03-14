@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="ipsilon-user">
+<!--<![endif]-->
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://static.gnome.org/ipsilon/css/bootstrap.min.css" rel="stylesheet" media="screen, print">
+    <link href="https://static.gnome.org/ipsilon/css/style.css" rel="stylesheet" media="screen, print">
+    <link rel="icon" type="image/png" href="https://static.gnome.org/ipsilon/img/favicon.ico" />
+    {%- if heads %}
+      {%- for group, value in heads.items() %}
+        {%- for head in value %}
+    {{ head }}
+        {%- endfor %}
+      {%- endfor %}
+    {%- endif %}
+  </head>
+  <body class="gnome-body">
+    <header class="gnome-header ">
+        <div class="container text-center">
+            <img class="gnome-brand" alt="GNOME OpenID Provider" src="https://static.gnome.org/ipsilon/img/gnome-ipsilon.svg"> 
+        </div>
+    </header>
+    <div class="gnome-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            {% block toptext %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="{% block panelwidths %}{% endblock %}">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    {% block maintitle %}{% endblock %}
+                                </div>
+                                <div class="panel-body">
+                                    {% block main %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <p class="text-center">
+            GNOME OpenID Provider.
+            Hosted by <a href="https://www.redhat.com" target="_blank">Red Hat</a>.
+            Powered by <a href="https://ipsilon-project.org/" target="_blank">Ipsilon</a>.
+            </p>
+        </div>
+    </div>
+  </body>
+</html>

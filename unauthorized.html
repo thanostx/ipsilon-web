@@ -1,0 +1,16 @@
+{% extends "master-user.html" %}
+{% block maintitle %}
+401 - Unauthorized
+{% endblock %}
+{% block main %}
+  {% if message: %}
+    <p>{{ message }}</p>
+  {% else %}
+    <p>Authentication was not succesful</p>
+  {% endif %}
+  {% if ipsilon_transaction_id %}
+    <p><a href="{{ basepath }}/login?ipsilon_transaction_id={{ ipsilon_transaction_id }}" title="Login">Try to login again</a></p>
+  {% else %}
+    <p><a href="{{ basepath }}/login" title="Login">Try to login again</a></p>
+  {% endif %}
+{% endblock %}

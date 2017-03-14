@@ -1,0 +1,8 @@
+{% extends "master-user.html" %}
+{% block toptext %}
+This is the OpenID page for {{username}}.
+{% endblock %}
+{% block main %}
+    <p>This page is used by the OpenID protocol and has no other use.</p>
+    <p>You can go to the <a href="{{ basepath }}">main page</a> instead.</p>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "master-user.html" %}
+{% block toptext %}
+<p class="main_feature">
+    This is the GNOME OpenID Provider homepage.
+</p>
+{% if user.name %}
+<hr>
+<div class="text-left">
+    <p class="main_feature">Welcome <strong>{{ user.fullname }}!</strong></p>
+    <p>Visit <a href="{{ basepath }}/portal" id="userportal">Portal</a> for a list of your Granted Consent
+      {% if user.is_admin %}
+        or go to the 
+        <a href="{{ basepath }}/admin" id="admin">Administration Console</a>
+      {% endif %}
+    .</p>
+    <a href="{{ basepath }}/logout" id="logout">Log Out</a>
+</div>
+<hr>
+{% endif %}
+{% endblock %}
+{% block main %}
+You will be redirected to this application whenever another application requires you to authenticate.
+{% endblock %}
