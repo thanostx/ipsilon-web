@@ -13,7 +13,7 @@
     <input type="hidden" name="ipsilon_transaction_id" id="ipsilon_transaction_id" value="{{ ipsilon_transaction_id }}">
 {%- for item in authz_details|dictsort %}
         <div class="form-group">
-            <div class="col-xs-12">{{ item[0] }}:</div>
+            <div class="col-xs-12"><strong>{{ item[0] }}</strong></div>
             <div class="col-xs-12">{{ item[1] }}</div>
         </div>
 {%- endfor %}
